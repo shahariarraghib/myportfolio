@@ -115,7 +115,7 @@ const CoverVideo = () => {
 
                 <div>
                     <div class="wrapper">
-                        <div class="buttona"> <a href="https://drive.google.com/file/d/1unVUD26izcg576xHFpobeeaJDMheEomJ/view?usp=sharing" target="_blank"><span>View resume</span></a></div>
+                        <div class="buttona"> <a href="https://drive.google.com/file/d/1ZTLOttRQHvrMIgKf2UWXYqCIWQuD5j0b/view?usp=sharing" target="_blank"><span>View resume</span></a></div>
                     </div>
 
 

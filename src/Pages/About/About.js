@@ -104,7 +104,7 @@ const About = () => {
                     improve my interpersonal communication skills along with problem
                     solving and analytical skills.
                     <div class="wrapper">
-                        <div class="buttonabout"> <a href="https://drive.google.com/uc?export=download&id=1unVUD26izcg576xHFpobeeaJDMheEomJ" target="_blank"><span>download resume</span></a></div>
+                        <div class="buttonabout"> <a href="https://drive.google.com/uc?export=download&id=1ZTLOttRQHvrMIgKf2UWXYqCIWQuD5j0b" target="_blank"><span>download resume</span></a></div>
                     </div>
                 </LeftPart>
 

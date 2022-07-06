@@ -74,9 +74,9 @@ position: absolute;
 background-color: ${props => props.theme.grey};
 min-height: 100vh;
 left: 30%;
+
 padding-left: 35%;
 
-//  width: 70%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
@@ -302,14 +302,14 @@ const MyWorks = () => {
 
 
 
-                    {/* <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project>
-                <Project img={img1} title='abc'></Project> */}
+                    {/* <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project>
+                    <Project img={covidcare} title='abc'></Project> */}
 
                 </RightSide>
 

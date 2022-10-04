@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import video from '../assets/black_-_13495 (1080p).mp4'
-import Typist from "react-typist";
-import './cover.css'
 
+
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
+
+import './cover.css'
+import Typed from "react-typed";
 import email from '../assets/Svgs/email.png'
 import github from '../assets/Svgs/github.png'
 import linkedin from '../assets/Svgs/linkedin.png'
 import facebook from '../assets/Svgs/facebook.png'
 import whatsapp from '../assets/Svgs/whatsapp.png'
+
 
 const Videocontainer = styled.section`
 width: 100%;
@@ -35,6 +40,7 @@ left: 0;
 right: 0;
 z-index: 1;
 background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.6)`};
+
 `
 
 const Title = styled.div`
@@ -79,6 +85,18 @@ span{
 
 
 const CoverVideo = () => {
+    const particlesInit = useCallback(async (engine) => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container) => {
+        await console.log(container);
+    }, []);
+
     const [count, setCount] = useState(1);
 
     useEffect(() => {
@@ -92,6 +110,7 @@ const CoverVideo = () => {
 
 
             <Title>
+
                 <div>
                     <h1 data-scroll data-scroll-speed="4">Hello,I'm</h1>
                 </div>
@@ -103,11 +122,16 @@ const CoverVideo = () => {
 
                 <div>
                     {count ? (
-                        <Typist avgTypingDelay={200} onTypingDone={() => setCount(0)}>
 
-                            <span data-scroll data-scroll-speed="4">full stack web developer</span>
+                        <div className='typedStyle'>
+                            <Typed
 
-                        </Typist>
+                                strings={["full stack web developer"]}
+                                typeSpeed={100}
+                                backSpeed={100}
+                                loop
+                            />
+                        </div>
                     ) : (
                         ""
                     )}
@@ -149,9 +173,98 @@ const CoverVideo = () => {
                     </div>
                 </div>
 
+
+
             </Title>
 
-            <video src={video} type="video/mp4" autoPlay muted loop></video>
+            {/* <video src={video} type="video/mp4" autoPlay muted loop></video> */}
+
+
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={{
+                    background: {
+
+                        color: {
+                            value: "#000000",
+
+                        },
+                    },
+
+
+
+                    fullScreen: false,
+
+                    fpsLimit: 60,
+                    interactivity: {
+                        events: {
+                            onClick: {
+                                enable: true,
+                                mode: "push",
+                            },
+                            onHover: {
+                                enable: true,
+                                mode: "repulse",
+                            },
+                            resize: true,
+                        },
+                        modes: {
+                            push: {
+                                quantity: 4,
+                            },
+                            repulse: {
+                                distance: 200,
+                                duration: 0.5,
+                            },
+                        },
+                    },
+                    particles: {
+                        color: {
+                            value: "#ffffff",
+                        },
+                        links: {
+                            color: "#ffffff",
+                            distance: 150,
+                            enable: true,
+                            opacity: 0.3,
+                            width: 1,
+                        },
+                        collisions: {
+                            enable: true,
+                        },
+                        move: {
+                            directions: "none",
+                            enable: true,
+                            outModes: {
+                                default: "bounce",
+                            },
+                            random: false,
+                            speed: 6,
+                            straight: false,
+                        },
+                        number: {
+                            density: {
+                                enable: true,
+                                area: 800,
+                            },
+                            value: 100,
+                        },
+                        opacity: {
+                            value: 0.5,
+                        },
+                        shape: {
+                            type: "triangle",
+                        },
+                        size: {
+                            value: { min: 3, max: 5 },
+                        },
+                    },
+                    detectRetina: true,
+                }}
+            />
+
         </Videocontainer>
     );
 };

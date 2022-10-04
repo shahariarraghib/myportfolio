@@ -8,7 +8,7 @@ const ScrollTriggerProxy = () => {
 
 
     const { scroll } = useLocomotiveScroll();
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);   
 
     useEffect(() => {
 

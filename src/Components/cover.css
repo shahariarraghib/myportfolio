@@ -107,3 +107,13 @@ a {
 .buttona a:hover:after {
     width: 100%;
 }
+
+.typedStyle {
+    font-family: "Sirin Stencil";
+    font-size: 8px;
+
+}
+
+#tsparticles {
+    height: 950px;
+}
